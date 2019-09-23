@@ -9,12 +9,12 @@ int main(){
 			"2 - Opcao dois - Qual a potencia?\n"
 			"3 - Opcao tres - Qual a raiz?\n"
 			"4 - Opcao quatro - Confira se o ano eh ou nao eh bissexto!\n"
-			"5 - Opcao cinco - Veja se vc foi aprovado!\n"
-			"6 - Opcao seis\n"
+			"5 - Opcao cinco - Veja se voce foi aprovado!\n"
+			"6 - Opcao seis - Apresentacao das notas dos alunos\n"
 			"7 - Opcao sete\n"
-			"8 - Opcao oito\n"
+			"8 - Opcao oito - Numero primo?!\n"
 			"9 - Opcao nove\n"
-			"10 - Opcao dez\n"
+			"10 - Opcao dez - Nome e matricula do aluno!\n"
 			"0 - Sair");
 			
 	printf("\nDigite um numero do Menu acima: ");scanf("%d", &opcao);
@@ -55,12 +55,14 @@ int main(){
 				
 				double x;
 				int y;
-				double raiz;
+				double raiz, potenciacao;
 				
 				printf("\nPrimeiro termo: ");scanf("%lf", &x);
 				printf("\nSegundo termo: ");scanf("%d", &y);
 				raiz = sqrt(x);
 				printf("\nO valor da raiz eh = %.2lf\n",raiz);
+				potenciacao = pow(raiz,y);
+				printf("%.2lf elevado %d = %.2lf\n", raiz,y,potenciacao);
 				
 				printf("\nDigitee um numero do Menu acima: ");scanf("%d", opcao);
 				break;
@@ -80,7 +82,7 @@ int main(){
 				break;
 				
 			case 5:
-				printf("\nVenha conferir se vc foi aprovado!");
+				printf("\nVenha conferir se voce foi aprovado!");
 				
 				double nota1, nota2, nota3;
 				double media;
@@ -98,9 +100,67 @@ int main(){
 				printf("\nDigite um numero do Menu acima: ");scanf("%d", opcao);
 				break;
 				
+			case 6:
+				printf("Apresentacao das notas dos alunos\n");
+				double a1, a2;
+				double media1;
+					
+				printf("\nDigite a primeira nota: ");scanf("%lf", &a1);
+				
+				if(a1 >= 0.0 && a1 <= 10.0 ){
+					printf("Digite a segunda nota: ");scanf("%lf", &a2);
+						if(a2 >= 0.0 && a2 <= 10.0){
+						media1 = (a1 + a2)/2;
+						printf("Media igual eh igual a %.2lf\n", media1);
+						}else{
+							printf("Nota invalida!!\n");
+						}		
+				}else{
+					printf("Valor da nota invalida!!\n");
+				}
+				printf("\nDigite um numero do Menu acima: ");scanf("%d", &opcao);
+				break;
+				
+			case 8:
+				printf("Numero primo?!\n");
+				
+				int num, i;
+				int div;
+					
+				div = 0;
+					
+				printf("\nDigite um numero interiro POSITIVO: ");scanf("%d", &num);
+				for(i = 1; i <= num; i++){
+					if(num % i == 0){
+						div++;
+					}
+				}
+				if(div == 2){
+					printf("%d Eh um numero primo!!\n",num);
+				}else{
+					printf("%d Nao eh um numero primo!!\n",num);
+				}
+				printf("\nDigite um numero do Menu acima: ");scanf("%d", &opcao);
+				break;
+				
+			case 10:
+				printf("Nome e matricula do aluno!\n");
+				char nome[15];
+				int matricula;
+					
+				printf("\nDigite um nome: ");
+				scanf("%s", &nome);
+				printf("Digite a matricula: ");
+				scanf("%d", &matricula);
+					
+				printf("Nome: %s | Matricula: %X\n", nome, matricula);
+				printf("\nDigite um numero do Menu acima: ");scanf("%d", &opcao);
+				break;
+				
 			default:
 				printf("\nOpcao invalida!!!");
-				printf("Digite um numero do Menu acima: ");scanf("%d", opcao);
+				printf("\nDigite um numero do Menu acima: ");scanf("%d", opcao);
 		}
-	}
+	}printf("Programa encerrado, obrigado e ate mais!");
+	return 0;
 }
