@@ -55,16 +55,15 @@ int main(){
 				
 				double x;
 				int y;
-				double raiz, potenciacao;
+				double raiz;
 				
 				printf("\nPrimeiro termo: ");scanf("%lf", &x);
 				printf("\nSegundo termo: ");scanf("%d", &y);
-				raiz = sqrt(x);
-				printf("\nO valor da raiz eh = %.2lf\n",raiz);
-				potenciacao = pow(raiz,y);
-				printf("%.2lf elevado %d = %.2lf\n", raiz,y,potenciacao);
 				
-				printf("\nDigitee um numero do Menu acima: ");scanf("%d", opcao);
+				raiz = pow(x,1.0/y);
+				printf("\nO valor da raiz eh = %.2lf\n",raiz);
+				
+				printf("\nDigite um numero do Menu acima: ");scanf("%d", opcao);
 				break;
 			
 			case 4:
