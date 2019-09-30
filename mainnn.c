@@ -11,9 +11,9 @@ int main(){
 			"4 - Opcao quatro - Confira se o ano eh ou nao eh bissexto!\n"
 			"5 - Opcao cinco - Veja se voce foi aprovado!\n"
 			"6 - Opcao seis - Apresentacao das notas dos alunos\n"
-			"7 - Opcao sete\n"
+			"7 - Opcao sete - Numero fatorial\n"
 			"8 - Opcao oito - Numero primo?!\n"
-			"9 - Opcao nove\n"
+			"9 - Opcao nove - Sequencia Fibonacci\n"
 			"10 - Opcao dez - Nome e matricula do aluno!\n"
 			"0 - Sair");
 			
@@ -119,6 +119,19 @@ int main(){
 				}
 				printf("\nDigite um numero do Menu acima: ");scanf("%d", &opcao);
 				break;
+			
+			case 7:
+				printf("Numero fatorial\n");
+				
+				int fat,nmr;
+				
+				printf("\nDigite um numero: ");scanf("%d", &nmr);
+				for(fat = 1; nmr > 1; nmr = nmr - 1){
+				fat = fat * nmr;
+				}
+				printf("O fatorial deste numero eh %d\n", fat);
+				printf("\nDigite um numero do Menu acima: ");scanf("%d", &opcao);
+				break;
 				
 			case 8:
 				printf("Numero primo?!\n");
@@ -140,6 +153,29 @@ int main(){
 					printf("%d Nao eh um numero primo!!\n",num);
 				}
 				printf("\nDigite um numero do Menu acima: ");scanf("%d", &opcao);
+				break;
+			
+			case 9:
+				printf("<Sequencia Fibonacci>\n");
+				
+				int x1, x2;
+				int j, n, auxiliar;
+
+			    x1 = 0;
+			    x2 = 1;
+					
+			    printf("\nQuantidade de termos na sequencia: ");scanf("%d", &n);
+			    printf("Sequencia Fibonacci: ");
+			    printf("%d %d ", x1,x2);
+				
+			    for(j = 0; j < n; j++) {
+			        auxiliar = x1 + x2;
+			        x1 = x2;
+			        x2 = auxiliar;
+			
+			        printf("%d ", auxiliar);
+			    }
+			    printf("\nDigite um numero do Menu acima: ");scanf("%d", &opcao);
 				break;
 				
 			case 10:
